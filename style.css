@@ -1,0 +1,48 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    color: inherit;
+}
+
+body{
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-image: linear-gradient(#FAEF3C,#81FA3C);
+    background-image: url(https://api.cedrorosadigital.com.br/v1/user/a1619bc2f6c97071f6e32face5dbc92f/banner);
+    background-size: cover;
+}
+
+#teclado{
+    background-color: red;
+    width: 800px;
+}
+
+#teclado .tamanho-60{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,40px);
+    grid-template-rows: repeat(5,40px);
+    justify-items: start;
+    align-items: center;
+    gap: 10px;
+}
+
+#teclado .teclas{
+    background-color: #FAEF3C;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#teclado .teclas.big-row{
+    width: 80%;
+    grid-column: span 2/3  ;
+}
+#teclado .teclas.double-row{
+    grid-column: span 2 ;
+}
+#teclado .teclas.double-column{
+    grid-row: span 2;
+}
