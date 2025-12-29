@@ -4,45 +4,189 @@
     box-sizing: border-box;
     list-style: none;
     color: inherit;
+    font-family: sans-serif;
+    font-size: 14px;
 }
 
 body{
     height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     background-repeat: no-repeat;
     background-image: linear-gradient(#FAEF3C,#81FA3C);
-    background-image: url(https://api.cedrorosadigital.com.br/v1/user/a1619bc2f6c97071f6e32face5dbc92f/banner);
-    background-size: cover;
+    background-color: #333;
 }
 
-#teclado{
-    background-color: red;
-    width: 800px;
+#app-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
 }
 
-#teclado .tamanho-60{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,40px);
-    grid-template-rows: repeat(5,40px);
-    justify-items: start;
+#controls {
+    display: flex;
+    gap: 20px;
+    background-color: #333;
+    padding: 10px 20px;
+    border-radius: 8px;
+    align-items: center;
+    color: #FAEF3C;
+}
+
+button {
+    padding: 8px 16px;
+    background-color: #FAEF3C;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: bold;
+    color: #333;
+}
+
+button:hover {
+    background-color: #D4CB33;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.control-group {
+    display: flex;
     align-items: center;
     gap: 10px;
 }
 
-#teclado .teclas{
+select {
+    padding: 6px;
+    border-radius: 4px;
+    border: none;
+    background-color: #eee;
+    color: #333;
+    font-weight: bold;
+}
+
+#teclado{
+    background-color: #333;
+    padding: 20px;
+    border-radius: 10px;
+    display: flex;
+    gap: 15px;
+    align-items: flex-start;
+}
+
+/* Sections */
+.section-main {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.section-nav {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    width: 130px;
+}
+
+.section-numpad {
+    display: grid;
+    grid-template-columns: repeat(4, 40px);
+    grid-template-rows: repeat(5, 40px);
+    gap: 5px;
+}
+
+/* Grids for Main Section */
+.row-function {
+    display: flex;
+    gap: 5px;
+}
+
+.keyboard-grid {
+    display: grid;
+    grid-template-columns: repeat(16, 40px);
+    grid-template-rows: repeat(5, 40px);
+    gap: 5px;
+}
+
+/* Grids for Nav Section */
+.row-system {
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    gap: 5px;
+}
+.nav-block {
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: repeat(2, 40px);
+    gap: 5px;
+}
+.arrow-block {
+    display: grid;
+    grid-template-columns: repeat(3, 40px);
+    grid-template-rows: repeat(2, 40px);
+    gap: 5px;
+    margin-top: 25px;
+}
+
+/* Keys Styling */
+.teclas{
     background-color: #FAEF3C;
-    width: 100%;
-    height: 100%;
+    border-radius: 4px;
     display: flex;
     align-items: center;
     justify-content: center;
+    cursor: pointer;
+    user-select: none;
+    box-shadow: 2px 2px 0px #00000050;
+    font-weight: bold;
+    color: #333;
+    transition: all 0.05s ease;
+    border: 2px solid transparent; /* Prepare for border change */
 }
-#teclado .teclas.big-row{
-    width: 80%;
-    grid-column: span 2/3  ;
+
+.teclas:active, .teclas.active {
+    transform: translate(2px, 2px);
+    box-shadow: none;
+    background-color: #D4CB33;
 }
-#teclado .teclas.double-row{
-    grid-column: span 2 ;
+
+.teclas.marked {
+    border-color: #333; /* Visual mark */
+    background-color: #81FA3C; /* Greenish to show it worked */
 }
-#teclado .teclas.double-column{
+
+/* Utility Sizes */
+.gap-small { width: 20px; visibility: hidden; }
+
+.span-2 { grid-column: span 2; }
+.span-3 { grid-column: span 3; }
+.span-4 { grid-column: span 4; }
+.span-space { grid-column: span 6; }
+
+/* Specifics */
+.enter-iso {
+    grid-column: span 2;
     grid-row: span 2;
+    height: 100%; 
+    border-radius: 4px;
 }
+
+.enter-ansi {
+    grid-column: span 3; /* ANSI Enter spans about 2.25u, in 16-col grid approx 3 cols? Check math */
+    /* 1u = 40px. 2.25u = 90px. 3 cols = 120px + gaps. 
+       Let's use span 4 or just adjust width. 
+       Wait, row 2 ends with Enter.
+       ABNT2: Quote(1)+Brace(1)+Enter(2 cols, 2 rows).
+       ANSI: Quote(1)+Enter(2.25 cols, 1 row). 
+       Actually, ANSI layout row 2: Tab(1.5)+Q..P(10)+[ (1)+] (1)+\ (1.5). Total 15u.
+       My grid is 16 cols. 
+       I will stick to span logic in JS.
+    */
+    grid-column: span 4; /* Placeholder */
+}
+
+
+.nav-placeholder { visibility: hidden; }

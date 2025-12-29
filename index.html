@@ -3,83 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Teclado</title>
+    <title>Teclado Completo</title>
     <link rel="stylesheet" href="style.css">
     <script defer src="script.js"></script>
 </head>
 <body>
-    <div id="teclado">
-        <div class="tamanho-60">
-                <div class="teclas" ctrl="" shift='"' alt="" >'</div>
-                <div class="teclas" ctrl="" shift="!" alt="" >1</div>
-                <div class="teclas" ctrl="" shift="@" alt="" >2</div>
-                <div class="teclas" ctrl="" shift="#" alt="" >3</div>
-                <div class="teclas" ctrl="" shift="$" alt="" >4</div>
-                <div class="teclas" ctrl="" shift="%" alt="" >5</div>
-                <div class="teclas" ctrl="" shift="¨" alt="" >6</div>
-                <div class="teclas" ctrl="" shift="&" alt="" >7</div>
-                <div class="teclas" ctrl="" shift="*" alt="" >8</div>
-                <div class="teclas" ctrl="" shift="(" alt="" >9</div>
-                <div class="teclas" ctrl="" shift=")" alt="" >0</div>
-                <div class="teclas" ctrl="" shift="_" alt="" >-</div>
-                <div class="teclas" ctrl="" shift="+" alt="" >=</div>
-                <div class="teclas double-row" ctrl="" shift="" alt="" ><--</div>
-                <div class="teclas double-row" ctrl="" shift="" alt="">↹</div>
-                
-                <div class="teclas" ctrl="" shift="" alt="">q</div>
-                <div class="teclas" ctrl="" shift="" alt="">w</div>
-                <div class="teclas" ctrl="" shift="" alt="">e</div>
-                <div class="teclas" ctrl="" shift="" alt="">r</div>
-                <div class="teclas" ctrl="" shift="" alt="">t</div>
-                <div class="teclas" ctrl="" shift="" alt="">y</div>
-                <div class="teclas" ctrl="" shift="" alt="">u</div>
-                <div class="teclas" ctrl="" shift="" alt="">i</div>
-                <div class="teclas" ctrl="" shift="" alt="">o</div>
-                <div class="teclas" ctrl="" shift="" alt="">p</div>
-                <div class="teclas" ctrl="" shift="" alt="">`</div>
-                <div class="teclas" ctrl="" shift="" alt="">{</div>
-                <div class="teclas double-row double-column" ctrl="" shift="" alt="">↵</div>
-
-                <div class="teclas double-row" ctrl="" shift="" alt="">FIXA</div>
-                <div class="teclas" ctrl="" shift="" alt="">a</div>
-                <div class="teclas" ctrl="" shift="" alt="">s</div>
-                <div class="teclas" ctrl="" shift="" alt="">d</div>
-                <div class="teclas" ctrl="" shift="" alt="">f</div>
-                <div class="teclas" ctrl="" shift="" alt="">g</div>
-                <div class="teclas" ctrl="" shift="" alt="">h</div>
-                <div class="teclas" ctrl="" shift="" alt="">j</div>
-                <div class="teclas" ctrl="" shift="" alt="">k</div>
-                <div class="teclas" ctrl="" shift="" alt="">l</div>
-                <div class="teclas" ctrl="" shift="" alt="">ç</div>
-                <div class="teclas" ctrl="" shift="" alt="">~</div>
-                <div class="teclas" ctrl="" shift="" alt="">}</div>
-
-                <div class="teclas double-row" ctrl="" shift="" alt="">Shift</div>
-                <div class="teclas" ctrl="" shift="" alt="">\</div>
-                <div class="teclas" ctrl="" shift="" alt="">z</div>
-                <div class="teclas" ctrl="" shift="" alt="">x</div>
-                <div class="teclas" ctrl="" shift="" alt="">c</div>
-                <div class="teclas" ctrl="" shift="" alt="">v</div>
-                <div class="teclas" ctrl="" shift="" alt="">b</div>
-                <div class="teclas" ctrl="" shift="" alt="">n</div>
-                <div class="teclas" ctrl="" shift="" alt="">m</div>
-                <div class="teclas" ctrl="" shift="" alt="">,</div>
-                <div class="teclas" ctrl="" shift="" alt="">.</div>
-                <div class="teclas" ctrl="" shift="" alt="">;</div>
-                <div class="teclas" ctrl="" shift="" alt="">/</div>
-
-                <div class="teclas double-row" ctrl="" shift="" alt="">Shift</div>
-                <div class="teclas double-row" ctrl="" shift="" alt="">CTRL</div>
-                <div class="teclas" ctrl="" shift="" alt="">Win</div>
-                <div class="teclas double-row" ctrl="" shift="" alt="">ALT</div>
-                <div class="teclas double-row" ctrl="" shift="" alt=""></div>
-                <div class="teclas double-row" ctrl="" shift="" alt="">ALT GR</div>
-                <div class="teclas" ctrl="" shift="" alt="">Win</div>
-                <div class="teclas double-row" ctrl="" shift="" alt="">CTRL</div>
-
+    <div id="app-container">
+        <!-- Control Panel -->
+        <div id="controls">
+            <button id="btn-clear">Limpar Teclas</button>
+            <div class="control-group">
+                <label for="select-layout">Layout:</label>
+                <select id="select-layout">
+                    <option value="abnt2">ABNT2 (Português)</option>
+                    <option value="us">US International (Inglês)</option>
+                </select>
+            </div>
         </div>
-        <div></div>
-        <div></div>
+
+        <!-- Keyboard Container -->
+        <div id="teclado">
+            <!-- Content will be injected by script.js -->
+        </div>
     </div>
 </body>
 </html>
